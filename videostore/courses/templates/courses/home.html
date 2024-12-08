@@ -1,0 +1,15 @@
+{% extends 'courses/main-layout.html' %}
+{% block main_section %}
+    {% for course in courses %}
+        <div>
+            <h1> {{ course.title }}</h1>
+            <p> {{ course.description }}</p>
+
+            {% if course.img %}
+            <img src="{{ course.img.url }}" alt="{{ course.title }}">
+            {% else %}
+            <img src="/pictures/default.jpg" alt="{{ course.title }}">
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}
